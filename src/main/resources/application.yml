@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    show-sql: true
+  application:
+    name: banking-application
+  datasource:
+    url: jdbc:h2:file:~/test
+    data-username: sa
+    data-password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+server:
+  port: 8080
