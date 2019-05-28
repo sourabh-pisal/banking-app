@@ -11,9 +11,10 @@ Simple Java based Banking Application for sending money between accounts
 ``docker build -t banking-app .``
 ``docker run -p 8080:8080 banking-app``
 
-* Please note some controller itegration test cases are failing will be fixed in later releases
+* Please note some controller itegration test cases are failing and are marked with @ignore and will be fixed in later releases
 * The project uses Spring framework for dependency injection, spring boot for auto-configuring spring, in-memory database(H2) for prototyping along with Hibernate and embedded tomcat.
-* To minimize boiled-plate code for POJO Lombok plugin is used
+* To minimize boiled-plate code for POJO Lombok plugin is used.
+* The transaction is done by locking specific row in account table using Pessimistic locking at database side. To verify transaction locking seperate integration test is present in AccountServiceITest.
 
 * To Create customer please run the below Post Rest
 ``curl -H "Content-Type: application/json" -X POST -d '{"firstName":"Curtis","lastName":"Sheridan","dateOfBirth":"2000-08-15","active":true}' http://localhost:8080/customer/create``
