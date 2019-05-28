@@ -1,11 +1,11 @@
 # Banking Application
 Simple Java based Banking Application for sending money between accounts
 
-* Please make sure Java 8 is installed by running following command into terminal  
-``java -version``
+* Please make sure Java 8 is installed by running following command into terminal<br />
+``java -version``<br />
 
-* To Build and Run Project execute following command
-``./gradlew build && java -jar build/libs/banking-1.0.0.jar``
+* To Build and Run Project execute following command<br />
+``./gradlew build && java -jar build/libs/banking-1.0.0.jar``<br />
 
 * The Application can also be deployed on Docker
 ``docker build -t banking-app .``
