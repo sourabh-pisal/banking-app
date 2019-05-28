@@ -5,15 +5,18 @@ Simple Java based Banking Application for sending money between accounts
 ``java -version``
 
 * To Build and Run Project execute following command
-``./gradlew build -x test && java -jar build/libs/banking-1.0.0.jar``
+``./gradlew build && java -jar build/libs/banking-1.0.0.jar``
 
 * The Application can also be deployed on Docker
 ``docker build -t banking-app .``
 ``docker run -p 8080:8080 banking-app``
 
-* Please note some controller itegration test cases are failing and are marked with @ignore and will be fixed in later releases
+* Please note some controller itegration test cases are failing and are marked with @ignore and will be fixed in later releases.
+
 * The project uses Spring framework for dependency injection, spring boot for auto-configuring spring, in-memory database(H2) for prototyping along with Hibernate and embedded tomcat.
+
 * To minimize boiled-plate code for POJO Lombok plugin is used.
+
 * The transaction is done by locking specific row in account table using Pessimistic locking at database side. To verify transaction locking seperate integration test is present in AccountServiceITest.
 
 * To Create customer please run the below Post Rest
