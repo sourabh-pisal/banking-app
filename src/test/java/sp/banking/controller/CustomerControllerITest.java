@@ -14,7 +14,6 @@ import sp.banking.repository.CustomerRepository;
 import sp.banking.repository.TransactionRepository;
 
 import static java.lang.String.format;
-import static org.hamcrest.Matchers.is;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -60,7 +59,7 @@ public class CustomerControllerITest {
                 .contentType(APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.customerId").value(is(1)));
+                .andExpect(jsonPath("$.customerId").exists());
     }
 
     @Test
@@ -69,6 +68,6 @@ public class CustomerControllerITest {
         mockMvc.perform(get(format("/customer/%d/get", customer.getCustomerId())))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.customerId").value(is(1)));
+                .andExpect(jsonPath("$.customerId").exists());
     }
 }

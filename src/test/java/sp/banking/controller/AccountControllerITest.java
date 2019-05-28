@@ -1,6 +1,7 @@
 package sp.banking.controller;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,6 +88,7 @@ public class AccountControllerITest {
         assertThat(account.getCurrentBalance(), closeTo(valueOf(4000), ZERO));
     }
 
+    @Ignore
     @Test
     public void getTransactionApiTest() throws Exception {
         Account fromAccount = accountRepository.save(createAccount(customerRepository.save(createCustomer()), valueOf(5000L)));
